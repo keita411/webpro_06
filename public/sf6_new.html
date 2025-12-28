@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>キャラ登録</title>
+    <style>
+    body { font-family: sans-serif; background-color: #f3e5f5; padding: 20px; }
+    .container { background-color: white; padding: 30px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); max-width: 500px; margin: 0 auto; }
+    h2 { color: #6A0DAD; border-bottom: 2px solid #6A0DAD; padding-bottom: 10px; }
+    label { font-weight: bold; display: block; margin-top: 15px; }
+    input[type="text"] { width: 100%; padding: 8px; margin-top: 5px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px; }
+    /* ボタンはオレンジでアクセント */
+    input[type="submit"] { background-color: #FF5800; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; margin-top: 20px; width: 100%; font-size: 16px; }
+    input[type="submit"]:hover { background-color: #cc4600; }
+    .back { display: block; text-align: center; margin-top: 15px; color: #666; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>新規キャラクター参戦</h2>
+        <form action="/sf6" method="POST">
+            <label>名前</label>
+            <input type="text" name="name" placeholder="例: ジェイミー" required>
+
+            <label>バトルタイプ</label>
+            <input type="text" name="type" placeholder="例: トリッキー" required>
+
+            <label>身長</label>
+            <input type="text" name="height" placeholder="例: 174cm" required>
+
+            <label>誕生日</label>
+            <input type="text" name="birth" placeholder="例: 不明" required>
+
+            <label>体重</label>
+            <input type="text" name="weight" placeholder="例: 85kg">
+
+            <label>好きなもの</label>
+            <input type="text" name="likes" placeholder="例: 武道、水ようかん">
+
+            <label>嫌いなもの</label>
+            <input type="text" name="dislikes" placeholder="例: クモ">
+            
+            <input type="submit" value="登 録">
+        </form>
+        <a href="/sf6" class="back">一覧に戻る</a>
+    </div>
+</body>
+</html>

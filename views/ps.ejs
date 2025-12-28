@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>PS歴代ハード一覧</title>
+  <style>
+    body { font-family: sans-serif; background-color: #f9f9f9; padding: 20px; }
+    h2 { color: #00439C; border-bottom: 3px solid #00439C; padding-bottom: 5px; }
+    table { width: 100%; border-collapse: collapse; background-color: white; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    th { background-color: #00439C; color: white; padding: 12px; text-align: left; }
+    td { border-bottom: 1px solid #ddd; padding: 12px; }
+    tr:hover { background-color: #e6f2ff; }
+    a { text-decoration: none; color: #00439C; font-weight: bold; }
+    .btn { display: inline-block; padding: 10px 20px; background-color: #555; color: white; border-radius: 5px; margin-top: 20px; text-decoration: none; }
+    .btn:hover { background-color: #333; }
+  </style>
+</head>
+<body>
+  <h2>PlayStation歴代ハード販売数</h2>
+  
+  <table>
+    <tr><th>ID</th><th>ハード名称</th><th>ハード販売数</th></tr>
+    
+    <% for( let row of data ) { %>
+      <tr>
+        <td><%= row.id %></td>
+        <td><a href="/ps/<%= row.id %>"><%= row.name %></a></td>
+        <td><%= row.hard %></td>
+        </tr>
+    <% } %>
+    
+  </table>
+  
+  <a href="/ps/create" class="btn">＋ ハードを追加する</a>
+</body>
+</html>

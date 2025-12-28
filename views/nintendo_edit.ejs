@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>編集: <%= data.name %></title>
+  <style>
+    body { font-family: sans-serif; background-color: #f9f9f9; padding: 20px; }
+    .container { background-color: white; padding: 30px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); max-width: 500px; margin: 0 auto; }
+    h2 { color: #E60012; }
+    label { font-weight: bold; display: block; margin-top: 15px; }
+    input[type="text"] { width: 100%; padding: 8px; margin-top: 5px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px; }
+    input[type="submit"] { background-color: #E60012; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; margin-top: 20px; width: 100%; font-size: 16px; }
+    input[type="submit"]:hover { background-color: #cc0010; }
+    .back { display: block; text-align: center; margin-top: 15px; color: #666; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>情報の編集</h2>
+    <form action="/nintendo/update/<%= data.id %>" method="POST">
+      
+      <label>ハード名称</label>
+      <input type="text" name="name" value="<%= data.name %>">
+      
+      <label>ハード販売数</label>
+      <input type="text" name="hard" value="<%= data.hard %>">
+      
+      <label>ソフト販売数</label>
+      <input type="text" name="soft" value="<%= data.soft %>">
+      
+      <label>発売日</label>
+      <input type="text" name="date" value="<%= data.date %>">
+      
+      <input type="submit" value="更 新">
+    </form>
+    <a href="/nintendo" class="back">キャンセル</a>
+  </div>
+</body>
+</html>

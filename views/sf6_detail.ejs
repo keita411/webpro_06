@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title><%= data.name %>の詳細</title>
+  <style>
+    body { font-family: sans-serif; background-color: #f3e5f5; padding: 20px; }
+    .container { background-color: white; padding: 30px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); max-width: 600px; margin: 0 auto; }
+    h2 { color: #6A0DAD; border-left: 5px solid #6A0DAD; padding-left: 10px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+    th { background-color: #eee; text-align: left; padding: 10px; width: 30%; border-bottom: 1px solid #ddd; }
+    td { padding: 10px; border-bottom: 1px solid #ddd; }
+    .btn-group { margin-top: 30px; text-align: center; }
+    .btn { padding: 10px 20px; margin: 0 5px; text-decoration: none; border-radius: 4px; color: white; display: inline-block; }
+    .edit { background-color: #4CAF50; }
+    .del { background-color: #f44336; }
+    .back { background-color: #888; margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2><%= data.name %></h2>
+    <table>
+      <tr><th>ID</th><td><%= data.id %></td></tr>
+      <tr><th>名前</th><td><%= data.name %></td></tr>
+      <tr><th>バトルタイプ</th><td><%= data.type %></td></tr>
+      <tr><th>身長</th><td><%= data.height %></td></tr>
+      
+      <tr><th>体重</th><td><%= data.weight %></td></tr>
+      <tr><th>好きなもの</th><td><%= data.likes %></td></tr>
+      <tr><th>嫌いなもの</th><td><%= data.dislikes %></td></tr>
+      <tr><th>誕生日</th><td><%= data.birth %></td></tr>
+    </table>
+
+    <div class="btn-group">
+      <a href="/sf6/edit/<%= data.id %>" class="btn edit">編集</a>
+      <a href="/sf6/delete/<%= data.id %>" class="btn del">削除</a>
+      <br>
+      <a href="/sf6" class="btn back">一覧に戻る</a>
+    </div>
+  </div>
+</body>
+</html>

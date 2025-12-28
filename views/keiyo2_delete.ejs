@@ -1,0 +1,27 @@
+<!Doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title><%= data.name %>の削除</title>
+</head>
+<body>
+  <h2>削除の確認</h2>
+  <p>本当に以下のデータを削除してもよろしいですか？</p>
+
+  <table>
+    <tr><th>項目</th><th>データ</th></tr>
+    <tr><td>ID</td><td><%= data.id %></td></tr>
+    <tr><td>駅名</td><td><%= data.name %></td></tr>
+    <tr><td>乗り換え線</td><td><%= data.change %></td></tr>
+  </table>
+
+  <br>
+
+  <form action="/keiyo2/delete/<%= id %>" method="POST">
+    <input type="submit" value="本当に削除する" style="background-color: red; color: white;">
+  </form>
+
+  <br>
+  <a href="/keiyo2">キャンセルして一覧に戻る</a>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>SF6 キャラクター一覧</title>
+  <style>
+    body { font-family: sans-serif; background-color: #f3e5f5; padding: 20px; }
+    h2 { color: #6A0DAD; border-bottom: 3px solid #6A0DAD; padding-bottom: 5px; }
+    table { width: 100%; border-collapse: collapse; background-color: white; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    th { background-color: #6A0DAD; color: white; padding: 12px; text-align: left; }
+    td { border-bottom: 1px solid #ddd; padding: 12px; }
+    tr:hover { background-color: #f3e5f5; }
+    a { text-decoration: none; color: #6A0DAD; font-weight: bold; }
+    .btn { display: inline-block; padding: 10px 20px; background-color: #FF5800; color: white; border-radius: 5px; margin-top: 20px; text-decoration: none; }
+    .btn:hover { background-color: #cc4600; }
+  </style>
+</head>
+<body>
+  <h2>ストリートファイター6 キャラクター一覧</h2>
+  
+  <table>
+    <tr><th>ID</th><th>名前</th><th>タイプ</th><th>身長</th><th>誕生日</th></tr>
+    
+    <% for( let row of data ) { %>
+      <tr>
+        <td><%= row.id %></td>
+        <td><a href="/sf6/<%= row.id %>"><%= row.name %></a></td>
+        <td><%= row.type %></td>
+        <td><%= row.height %></td>
+        <td><%= row.birth %></td>
+      </tr>
+    <% } %>
+    
+  </table>
+  
+  <a href="/sf6/create" class="btn">＋ 新キャラを参戦させる</a>
+</body>
+</html>

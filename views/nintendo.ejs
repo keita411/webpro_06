@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>歴代ハード一覧</title>
+  <style>
+    body { font-family: sans-serif; background-color: #f9f9f9; padding: 20px; }
+    h2 { color: #E60012; border-bottom: 3px solid #E60012; padding-bottom: 5px; }
+    table { width: 100%; border-collapse: collapse; background-color: white; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    th { background-color: #E60012; color: white; padding: 12px; text-align: left; }
+    td { border-bottom: 1px solid #ddd; padding: 12px; }
+    tr:hover { background-color: #ffe6e6; }
+    a { text-decoration: none; color: #E60012; font-weight: bold; }
+    .btn { display: inline-block; padding: 10px 20px; background-color: #555; color: white; border-radius: 5px; margin-top: 20px; text-decoration: none; }
+    .btn:hover { background-color: #333; }
+  </style>
+</head>
+<body>
+  <h2>ニンテンドー歴代ハード販売数</h2>
+  
+  <table>
+    <tr><th>ID</th><th>ハード名称</th><th>ハード販売数</th></tr>
+    
+    <% for( let row of data ) { %>
+      <tr>
+        <td><%= row.id %></td>
+        <td><a href="/nintendo/<%= row.id %>"><%= row.name %></a></td>
+        <td><%= row.hard %></td>
+        </tr>
+    <% } %>
+    
+  </table>
+  
+  <a href="/nintendo/create" class="btn">＋ ハードを追加する</a>
+</body>
+</html>
